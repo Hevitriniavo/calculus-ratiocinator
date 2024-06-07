@@ -1,7 +1,10 @@
 package com.fresh.coding;
 
+import com.fresh.coding.affirmations.CompositeAffirmation;
+import com.fresh.coding.affirmations.SimpleAffirmation;
+import com.fresh.coding.calculus.ratiocinator.CalculusRatiocinator;
 import com.fresh.coding.conjonctions.Et;
-import com.fresh.coding.enums.ValeurDeVerite;
+import com.fresh.coding.verites.ValeurDeVerite;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

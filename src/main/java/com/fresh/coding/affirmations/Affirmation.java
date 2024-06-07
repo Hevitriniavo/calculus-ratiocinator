@@ -1,6 +1,6 @@
-package com.fresh.coding;
+package com.fresh.coding.affirmations;
 
-import com.fresh.coding.enums.ValeurDeVerite;
+import com.fresh.coding.verites.ValeurDeVerite;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

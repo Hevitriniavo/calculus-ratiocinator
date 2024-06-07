@@ -1,9 +1,8 @@
 package com.fresh.coding.conjonctions;
 
-import com.fresh.coding.Conjonction;
-import com.fresh.coding.enums.ValeurDeVerite;
+import com.fresh.coding.verites.ValeurDeVerite;
 
-public class Donc extends Conjonction {
+public final class Donc extends Conjonction {
     @Override
     public ValeurDeVerite evaluer(ValeurDeVerite premierVerite, ValeurDeVerite deuxiemeVerite) {
         if (premierVerite == ValeurDeVerite.VRAI && deuxiemeVerite == ValeurDeVerite.FAUX) {

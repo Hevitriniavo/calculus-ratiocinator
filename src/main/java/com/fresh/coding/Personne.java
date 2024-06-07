@@ -1,6 +1,9 @@
 package com.fresh.coding;
 
-import com.fresh.coding.enums.ValeurDeVerite;
+import com.fresh.coding.affirmations.Affirmation;
+import com.fresh.coding.calculus.ratiocinator.CalculusRatiocinator;
+import com.fresh.coding.conjonctions.Conjonction;
+import com.fresh.coding.verites.ValeurDeVerite;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;

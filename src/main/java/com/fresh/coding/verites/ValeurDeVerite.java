@@ -1,4 +1,4 @@
-package com.fresh.coding.enums;
+package com.fresh.coding.verites;
 
 public enum ValeurDeVerite {
     VRAI,

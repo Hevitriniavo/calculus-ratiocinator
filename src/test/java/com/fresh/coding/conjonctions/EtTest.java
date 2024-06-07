@@ -1,6 +1,6 @@
 package com.fresh.coding.conjonctions;
 
-import com.fresh.coding.enums.ValeurDeVerite;
+import com.fresh.coding.verites.ValeurDeVerite;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

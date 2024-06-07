@@ -1,9 +1,11 @@
-package com.fresh.coding;
+package com.fresh.coding.affirmations;
 
-import com.fresh.coding.enums.ValeurDeVerite;
+import com.fresh.coding.verites.ValeurDeVerite;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
+@EqualsAndHashCode(callSuper = true)
 public class SimpleAffirmation extends Affirmation {
     private final ValeurDeVerite valeurDeVerite;
 
