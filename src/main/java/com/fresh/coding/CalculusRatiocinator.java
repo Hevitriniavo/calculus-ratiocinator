@@ -1,5 +1,6 @@
 package com.fresh.coding;
 
+import com.fresh.coding.conjonctions.Et;
 import com.fresh.coding.enums.ValeurDeVerite;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -22,9 +23,18 @@ public class CalculusRatiocinator {
         affirmations.put(affirmation.getDescription(), affirmation);
     }
 
-    public ValeurDeVerite evaluer(Affirmation affirmation){
-        if(affirmations.containsKey(affirmation.getDescription())){
+    public ValeurDeVerite evaluer(Affirmation affirmation) {
+        if (affirmations.containsKey(affirmation.getDescription())) {
             return affirmation.evaluer();
+        } else {
+            return ValeurDeVerite.JENESAISPAS;
+        }
+    }
+
+    public ValeurDeVerite evaluer(Affirmation affirmation1, Affirmation affirmation2) {
+        if (affirmations.containsKey(affirmation1.getDescription()) && affirmations.containsKey(affirmation2.getDescription())) {
+            Conjonction et = new Et();
+            return et.evaluer(affirmation1.evaluer(), affirmation2.evaluer());
         } else {
             return ValeurDeVerite.JENESAISPAS;
         }
