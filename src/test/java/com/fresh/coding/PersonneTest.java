@@ -58,10 +58,10 @@ class PersonneTest {
         assertEquals(ValeurDeVerite.FAUX, louEstPauvreEtlouEstGenereux);
 
         var louEstBeauDoncLouEstPauvre = lou.evaluerAffirmations(verite, mensonge, donc);
-        assertEquals(ValeurDeVerite.VRAI, louEstBeauDoncLouEstPauvre);
+        assertEquals(ValeurDeVerite.FAUX, louEstBeauDoncLouEstPauvre);
 
         var louEstPauvreDoncLouEstGenereux = lou.evaluerAffirmations(mensonge, affirmation, donc);
-        assertEquals(ValeurDeVerite.FAUX, louEstPauvreDoncLouEstGenereux);
+        assertEquals(ValeurDeVerite.VRAI, louEstPauvreDoncLouEstGenereux);
 
         var louEstBeauOuLouEstGenereuxDoncLouEstPauvre = new CompositeAffirmation("Lou est beau ou Lou est généreux", verite, affirmation, ou);
         var result = lou.evaluerAffirmations(louEstBeauOuLouEstGenereuxDoncLouEstPauvre, mensonge, donc);
