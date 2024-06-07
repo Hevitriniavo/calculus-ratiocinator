@@ -13,14 +13,14 @@ class PersonneTest {
     @Test
     void ajouterAffirmation() {
         var lou = new Personne("Lou");
-        var verite1 = new SimpleAffirmation("Lou est beau", ValeurDeVerite.VRAI);
-        var mensonge1 = new SimpleAffirmation("Lou est pauvre", ValeurDeVerite.FAUX);
+        var verite = new SimpleAffirmation("Lou est beau", ValeurDeVerite.VRAI);
+        var mensonge = new SimpleAffirmation("Lou est pauvre", ValeurDeVerite.FAUX);
 
-        lou.ajouterAffirmation(verite1);
-        lou.ajouterAffirmation(mensonge1);
+        lou.ajouterAffirmation(verite);
+        lou.ajouterAffirmation(mensonge);
 
-        assertTrue(lou.getCalculusRatiocinator().getAffirmations().contains(verite1));
-        assertTrue(lou.getCalculusRatiocinator().getAffirmations().contains(mensonge1));
+        assertTrue(lou.getCalculusRatiocinator().getAffirmations().contains(verite));
+        assertTrue(lou.getCalculusRatiocinator().getAffirmations().contains(mensonge));
     }
 
     @Test
