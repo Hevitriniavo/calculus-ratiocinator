@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculusRatiocinatorTest {
 
     @Test
-    void addAffirmation() {
+    void ajouterAffirmation() {
         var calculusRatiocinator = new CalculusRatiocinator();
         var premierAffirmation = new SimpleAffirmation("Lou est beau", ValeurDeVerite.VRAI);
         var deuxiemeAffirmation = new SimpleAffirmation("Lou est pauvre", ValeurDeVerite.FAUX);
@@ -35,12 +35,12 @@ class CalculusRatiocinatorTest {
 
     @Test
     void evaluerCompositeAffirmation() {
-        var cr = new CalculusRatiocinator();
+        var calculusRatiocinator = new CalculusRatiocinator();
         var premierAffirmation = new SimpleAffirmation("Lou est beau", ValeurDeVerite.VRAI);
         var deuxiemeAffirmation = new SimpleAffirmation("Lou est pauvre", ValeurDeVerite.FAUX);
         var compositeAffirmation = new CompositeAffirmation("Lou est beau et Lou est pauvre", premierAffirmation, deuxiemeAffirmation, new Et());
-        cr.ajouterAffirmation(compositeAffirmation);
-        assertEquals(ValeurDeVerite.FAUX, cr.evaluerAffirmation(compositeAffirmation));
+        calculusRatiocinator.ajouterAffirmation(compositeAffirmation);
+        assertEquals(ValeurDeVerite.FAUX, calculusRatiocinator.evaluerAffirmation(compositeAffirmation));
     }
 
 }
