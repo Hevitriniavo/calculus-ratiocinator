@@ -16,6 +16,7 @@ class CalculusRatiocinatorTest {
 
         calculusRatiocinator.ajouterAffirmation(premierAffirmation);
         calculusRatiocinator.ajouterAffirmation(deuxiemeAffirmation);
+
         assertEquals(2, calculusRatiocinator.getAffirmations().size());
         assertTrue(calculusRatiocinator.getAffirmations().contains(premierAffirmation));
         assertTrue(calculusRatiocinator.getAffirmations().contains(deuxiemeAffirmation));
@@ -24,22 +25,22 @@ class CalculusRatiocinatorTest {
     @Test
     void evaluerSimpleAffirmation() {
         var cr = new CalculusRatiocinator();
-        var affirmation1 = new SimpleAffirmation("Lou est beau", ValeurDeVerite.VRAI);
-        var affirmation2 = new SimpleAffirmation("Lou est pauvre", ValeurDeVerite.FAUX);
-        cr.ajouterAffirmation(affirmation1);
-        cr.ajouterAffirmation(affirmation2);
-        assertEquals(ValeurDeVerite.VRAI, cr.evaluer(affirmation1));
-        assertEquals(ValeurDeVerite.FAUX, cr.evaluer(affirmation2));
+        var premierAffirmation = new SimpleAffirmation("Lou est beau", ValeurDeVerite.VRAI);
+        var deuxiemeAffirmation = new SimpleAffirmation("Lou est pauvre", ValeurDeVerite.FAUX);
+        cr.ajouterAffirmation(premierAffirmation);
+        cr.ajouterAffirmation(deuxiemeAffirmation);
+        assertEquals(ValeurDeVerite.VRAI, cr.evaluerAffirmation(premierAffirmation));
+        assertEquals(ValeurDeVerite.FAUX, cr.evaluerAffirmation(deuxiemeAffirmation));
     }
 
     @Test
     void evaluerCompositeAffirmation() {
         var cr = new CalculusRatiocinator();
-        var affirmation1 = new SimpleAffirmation("Lou est beau", ValeurDeVerite.VRAI);
-        var affirmation2 = new SimpleAffirmation("Lou est pauvre", ValeurDeVerite.FAUX);
-        var compositeAffirmation = new CompositeAffirmation("Lou est beau et Lou est pauvre", affirmation1, affirmation2, new Et());
+        var premierAffirmation = new SimpleAffirmation("Lou est beau", ValeurDeVerite.VRAI);
+        var deuxiemeAffirmation = new SimpleAffirmation("Lou est pauvre", ValeurDeVerite.FAUX);
+        var compositeAffirmation = new CompositeAffirmation("Lou est beau et Lou est pauvre", premierAffirmation, deuxiemeAffirmation, new Et());
         cr.ajouterAffirmation(compositeAffirmation);
-        assertEquals(ValeurDeVerite.FAUX, cr.evaluer(compositeAffirmation));
+        assertEquals(ValeurDeVerite.FAUX, cr.evaluerAffirmation(compositeAffirmation));
     }
 
 }

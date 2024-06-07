@@ -1,14 +1,11 @@
 package com.fresh.coding;
 
-import com.fresh.coding.conjonctions.Et;
 import com.fresh.coding.enums.ValeurDeVerite;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 @Getter
@@ -25,7 +22,7 @@ public class CalculusRatiocinator {
         affirmations.add(affirmation);
     }
 
-    public ValeurDeVerite evaluer(Affirmation affirmation) {
+    public ValeurDeVerite evaluerAffirmation(Affirmation affirmation) {
         if (affirmations.contains(affirmation)) {
             return affirmation.evaluer();
         } else {
@@ -33,7 +30,7 @@ public class CalculusRatiocinator {
         }
     }
 
-    public ValeurDeVerite evaluer(Affirmation premierAffirmation, Affirmation deuxiemeAffirmation, Conjonction conjonction) {
+    public ValeurDeVerite evaluerAffirmation(Affirmation premierAffirmation, Affirmation deuxiemeAffirmation, Conjonction conjonction) {
         if (affirmations.contains(premierAffirmation) && affirmations.contains(deuxiemeAffirmation)) {
             return conjonction.evaluer(premierAffirmation.evaluer(), deuxiemeAffirmation.evaluer());
         } else {
