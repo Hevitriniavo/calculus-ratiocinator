@@ -1,5 +1,6 @@
 package com.fresh.coding;
 
+import com.fresh.coding.enums.ValeurDeVerite;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -18,6 +19,14 @@ public class CalculusRatiocinator {
     }
 
     public void addAffirmation(Affirmation affirmation) {
+        affirmations.put(affirmation.getDescription(), affirmation);
+    }
 
+    public ValeurDeVerite evaluer(Affirmation affirmation){
+        if(affirmations.containsKey(affirmation.getDescription())){
+            return affirmation.evaluer();
+        } else {
+            return ValeurDeVerite.JENESAISPAS;
+        }
     }
 }
