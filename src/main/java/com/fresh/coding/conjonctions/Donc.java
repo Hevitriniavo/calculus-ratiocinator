@@ -5,10 +5,10 @@ import com.fresh.coding.enums.ValeurDeVerite;
 
 public class Donc extends Conjonction {
     @Override
-    public ValeurDeVerite evaluer(ValeurDeVerite a, ValeurDeVerite b) {
-        if (a == ValeurDeVerite.VRAI && b == ValeurDeVerite.FAUX) {
-            return ValeurDeVerite.FAUX;
+    public ValeurDeVerite evaluer(ValeurDeVerite premierVerite, ValeurDeVerite deuxiemeVerite) {
+        if (premierVerite == ValeurDeVerite.VRAI && deuxiemeVerite == ValeurDeVerite.FAUX) {
+            return ValeurDeVerite.VRAI;
         }
-        return ValeurDeVerite.VRAI;
+        return ValeurDeVerite.FAUX;
     }
 }
